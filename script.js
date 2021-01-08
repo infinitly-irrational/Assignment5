@@ -98,9 +98,6 @@ const fillAllUncolored = () => {
     }
   }
 }
-
-
-
   
 /*
 const fillAllUncolored = () => {
