@@ -1,5 +1,6 @@
 let colNum=0;
 let rowNum=0;
+let color="white";
 const addRow = () => {
     if(colNum===0 && rowNum===0){
       colNum=1;
@@ -64,4 +65,37 @@ const removeRow = () => {
     colNum=0;
   }
  }
+}
+
+document.getElementById("form").addEventListener("submit", function(event) {
+  color = document.getElementById("colors").value;
+  document.getElementById("colorField").innerHTML="Current Color: "+color;
+  event.preventDefault();
+});
+
+const fillAll = () => {
+  for(let j=1;j<=rowNum;j++){
+    for(let i=1;i<=colNum;i++){
+      document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = color;
+    }
+  }
+}
+
+const clearColor = () => {
+  for(let j=1;j<=rowNum;j++){
+    for(let i=1;i<=colNum;i++){
+      document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = "white";
+    }
+  }
+}
+
+
+  const fillAllUncolored = () => {
+    for(let j=1;j<=rowNum;j++){
+      for(let i=1;i<=colNum;i++){
+        if(document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = "White"){
+          document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = color;
+        }
+      }
+    }
 }
