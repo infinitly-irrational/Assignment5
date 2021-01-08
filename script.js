@@ -104,8 +104,20 @@ const fillAllUncolored = () => {
 }
   
 function handleEvent(grid) {
-  grid.addEventListener('mousedown', function() {
-    grid.style.backgroundColor = color;
-  });
+          needChange=false;
+          grid.addEventListener('click', function() {
+            grid.style.backgroundColor = color;
+          });
+          grid.addEventListener('mousedown', function() {
+            needChange=true;
+          });
+          grid.addEventListener('mouseup', function() {
+            needChange=false;
+          });
+          grid.addEventListener('mouseover', function(e){
+            if(needChange){
+              grid.style.backgroundColor = color;
+            }
+          });
 }
  
