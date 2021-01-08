@@ -7,6 +7,7 @@ const addRow = () => {
       rowNum=1;
       let initial = document.createElement("div");
       initial.id="column1_row1";
+      handleEvent(initial);
       document.getElementById("grids").appendChild(initial);
     }
     else{
@@ -14,6 +15,7 @@ const addRow = () => {
     for(let i=1;i<=colNum;i++){
       let newDiv=document.createElement('div');
       newDiv.id="column"+i+"_"+"row"+(rowNum+1);
+      handleEvent(newDiv);
       if(i===1){
         newDiv.style.clear="left";
       }
@@ -29,12 +31,14 @@ const addColumn = () => {
     rowNum=1;
     let initial = document.createElement("div");
     initial.id="column1_row1";
+    handleEvent(initial);
     document.getElementById("grids").appendChild(initial);
   }else{
   for(let i=1;i<=rowNum;i++){
     let curr=document.getElementById("column"+colNum+"_"+"row"+i);
     let newDiv=document.createElement('div');
     newDiv.id="column"+(colNum+1)+"_"+"row"+i;
+    handleEvent(newDiv);
     curr.parentNode.insertBefore(newDiv, curr.nextSibling);
   }
   colNum++;
@@ -99,13 +103,9 @@ const fillAllUncolored = () => {
   }
 }
   
-/*
-const fillAllUncolored = () => {
-    for(let j=1;j<=rowNum;j++){
-      for(let i=1;i<=colNum;i++){
-        if(document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = "White"){
-          document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = color;
-        }
-      }
-    }
-} */
+function handleEvent(grid) {
+  grid.addEventListener('mousedown', function() {
+    grid.style.backgroundColor = color;
+  });
+}
+ 
