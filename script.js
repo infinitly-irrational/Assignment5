@@ -1,6 +1,7 @@
 let colNum=0;
 let rowNum=0;
 let color="white";
+let needChange=false;
 const addRow = () => {
     if(colNum===0 && rowNum===0){
       colNum=1;
@@ -104,20 +105,23 @@ const fillAllUncolored = () => {
 }
   
 function handleEvent(grid) {
-          needChange=false;
-          grid.addEventListener('click', function() {
-            grid.style.backgroundColor = color;
-          });
-          grid.addEventListener('mousedown', function() {
-            needChange=true;
-          });
-          grid.addEventListener('mouseup', function() {
-            needChange=false;
-          });
-          grid.addEventListener('mouseover', function(e){
-            if(needChange){
-              grid.style.backgroundColor = color;
-            }
-          });
+    grid.addEventListener('click', function(e) {
+      e.preventDefault();
+      grid.style.backgroundColor = color;
+    });
+    grid.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      needChange=true;
+    });
+    grid.addEventListener('mouseup', function(e) {
+      e.preventDefault();
+      needChange=false;
+    });
+    grid.addEventListener('mouseover', function(e){
+      e.preventDefault();
+      if(needChange){
+        grid.style.backgroundColor = color;
+      }
+    });
 }
  
