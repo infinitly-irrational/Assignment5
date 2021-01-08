@@ -38,7 +38,7 @@ const removeRow = () => {
   }
   rowNum--;
 }
-
+/*
 const clearAllCells = () => {
 
   let color = "white";
@@ -46,4 +46,32 @@ const clearAllCells = () => {
   document.querySelector("button").addEventListener("click", function(){
     document.querySelector("div").style.background = color;
   })
+}
+*/
+
+const fillAll = () => {
+  for(let j=1;j<=rowNum;j++){
+    for(let i=1;i<=colNum;i++){
+      document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = color;
+    }
+  }
+}
+
+const clearColor = () => {
+  for(let j=1;j<=rowNum;j++){
+    for(let i=1;i<=colNum;i++){
+      document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = "white";
+    }
+  }
+}
+
+
+  const fillAllUncolored = () => {
+    for(let j=1;j<=rowNum;j++){
+      for(let i=1;i<=colNum;i++){
+        if(document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = "White"){
+          document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = color;
+        }
+      }
+    }
 }
