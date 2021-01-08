@@ -39,3 +39,11 @@ const removeRow = () => {
   rowNum--;
 }
 
+const clearAllCells = () => {
+
+  let color = "white";
+  
+  document.querySelector("button").addEventListener("click", function(){
+    document.querySelector("div").style.background = color;
+  })
+}
