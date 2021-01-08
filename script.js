@@ -38,3 +38,4 @@ const removeRow = () => {
   }
   rowNum--;
 }
+
