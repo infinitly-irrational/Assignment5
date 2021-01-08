@@ -38,7 +38,11 @@ const removeRow = () => {
   }
   rowNum--;
 }
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> e69c581fc2aae2fb01a68666b01735b9f7f9b009
 const clearAllCells = () => {
 
   let color = "white";
@@ -47,7 +51,10 @@ const clearAllCells = () => {
     document.querySelector("div").style.background = color;
   })
 }
+<<<<<<< HEAD
 */
+=======
+>>>>>>> e69c581fc2aae2fb01a68666b01735b9f7f9b009
 
 const fillAll = () => {
   for(let j=1;j<=rowNum;j++){
@@ -74,4 +81,9 @@ const clearColor = () => {
         }
       }
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> e69c581fc2aae2fb01a68666b01735b9f7f9b009

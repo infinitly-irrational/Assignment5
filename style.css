@@ -3,9 +3,13 @@ div{
   width:30px;
   border: 4px solid black;
   float:left;
+  background-color: white;
 }
 
+<<<<<<< HEAD
 .buttons{
 
   background-color: blue;
 }
+=======
+>>>>>>> e69c581fc2aae2fb01a68666b01735b9f7f9b009
