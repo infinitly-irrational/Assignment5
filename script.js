@@ -109,13 +109,13 @@ function handleEvent(grid) {
       e.preventDefault();
       grid.style.backgroundColor = color;
     });
-    grid.addEventListener('mousedown', function(e) {
-      e.preventDefault();
-      needChange=true;
-    });
     grid.addEventListener('mouseup', function(e) {
       e.preventDefault();
       needChange=false;
+    });
+    grid.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      needChange=true;
     });
     grid.addEventListener('mouseover', function(e){
       e.preventDefault();
