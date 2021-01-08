@@ -89,8 +89,21 @@ const clearColor = () => {
   }
 }
 
+const fillAllUncolored = () => {
+  for(let j=1;j<=rowNum;j++){
+    for(let i=1;i<=colNum;i++){
+      if(document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor === ""){
+        document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = color;
+      }
+    }
+  }
+}
 
-  const fillAllUncolored = () => {
+
+
+  
+/*
+const fillAllUncolored = () => {
     for(let j=1;j<=rowNum;j++){
       for(let i=1;i<=colNum;i++){
         if(document.getElementById("column"+i+"_"+"row"+j).style.backgroundColor = "White"){
@@ -98,4 +111,4 @@ const clearColor = () => {
         }
       }
     }
-}
+} */
