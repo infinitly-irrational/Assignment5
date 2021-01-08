@@ -1,6 +1,15 @@
-let colNum=1;
-let rowNum=1;
+let colNum=0;
+let rowNum=0;
+let color="white";
 const addRow = () => {
+    if(colNum===0 && rowNum===0){
+      colNum=1;
+      rowNum=1;
+      let initial = document.createElement("div");
+      initial.id="column1_row1";
+      document.getElementById("grids").appendChild(initial);
+    }
+    else{
     let start = document.getElementById("column"+colNum+"_"+"row"+rowNum);
     for(let i=1;i<=colNum;i++){
       let newDiv=document.createElement('div');
@@ -12,8 +21,16 @@ const addRow = () => {
       start=newDiv;
     }
     rowNum++;
+   }
 }
 const addColumn = () => {
+  if(colNum===0 && rowNum===0){
+    colNum=1;
+    rowNum=1;
+    let initial = document.createElement("div");
+    initial.id="column1_row1";
+    document.getElementById("grids").appendChild(initial);
+  }else{
   for(let i=1;i<=rowNum;i++){
     let curr=document.getElementById("column"+colNum+"_"+"row"+i);
     let newDiv=document.createElement('div');
@@ -21,31 +38,40 @@ const addColumn = () => {
     curr.parentNode.insertBefore(newDiv, curr.nextSibling);
   }
   colNum++;
+  }
 }
 
 const removeColumn = () => {
+  if(rowNum!==0 && colNum!==0){
   for(let i=1;i<=rowNum;i++){
     let curr=document.getElementById("column"+colNum+"_"+"row"+i);
     curr.parentNode.removeChild(curr);
   }
   colNum--;
+  if(colNum===0){
+    rowNum=0;
+  }
+ }
 }
 
 const removeRow = () => {
+  if(rowNum!==0 && colNum!==0){
   for(let i=1;i<=colNum;i++){
     let curr=document.getElementById("column"+i+"_"+"row"+rowNum);
     curr.parentNode.removeChild(curr);
   }
   rowNum--;
+  if(rowNum===0){
+    colNum=0;
+  }
+ }
 }
-const clearAllCells = () => {
 
-  let color = "white";
-  
-  document.querySelector("button").addEventListener("click", function(){
-    document.querySelector("div").style.background = color;
-  })
-}
+document.getElementById("form").addEventListener("submit", function(event) {
+  color = document.getElementById("colors").value;
+  document.getElementById("colorField").innerHTML="Current Color: "+color;
+  event.preventDefault();
+});
 
 const fillAll = () => {
   for(let j=1;j<=rowNum;j++){
@@ -73,4 +99,3 @@ const clearColor = () => {
       }
     }
 }
-
