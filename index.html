@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Grid</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <span id="headline">
+            <h1>Grid</h1>
+        </span>
+    </header>
+    <p class = "colors">
+    <button onclick="addRow()">
+      Add Row
+    </button>
+    <button onclick="addColumn()">
+      Add Column
+    </button>
+    <button onclick="removeRow()">
+      Remove Row
+    </button>
+    <button onclick="removeColumn()">
+      Remove Column
+    </button>
+    <p id="colorField">
+      Current Color: White
+      <form id="form">
+      <label for="colors">Choose a color:</label>
+      <select name="colors" id="colors">
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+      </select>
+      <input id="submit" type="submit" value="Submit">
+      </form>
+    </p>
+    <button onclick="fillAll()">
+      Fill All
+    </button>
+    <button onclick="fillAllUncolored()">
+      Fill All Uncolored
+    </button>
+    <button onclick="clearColor()">
+      Clear Color
+    </button>
+   </p>
+   <p id="grids">
+   </p>
+   
+</body>
+<script src="script.js"></script>
+</html>
